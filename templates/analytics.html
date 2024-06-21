@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/css/analytics.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Inventory Management System</title>
+</head>
+<body>
+
+    <input id="hamburger" class="hamburger" type="checkbox"/>
+    <label class="hamburger" for="hamburger">
+        <i></i>
+        <text>
+            <close>close</close>
+            <open>menu</open>
+        </text>
+    </label>
+
+    <section class="drawer-list">
+        <nav>
+            <ul>
+                <li><a href="product.html">Product Management</a></li>
+                <li><a href="billing.html">Billing System</a></li>
+                <li><a href="estimate.html">Estimate Maker</a></li>
+                <li><a href="finance.html">Finance Management</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="catalog.html">Catalogue</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li class="back-button-container">
+                    <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+                </li>
+                <li class="date-time-flexbox">
+                    <div id="date">Date: <span id="currentDate"></span></div>
+                    <div id="time">Time: <span id="currentTime"></span></div>
+                </li>
+                <li><a href="login.html" id="logout-button">Log Out</a></li>
+            </ul>
+        </nav>
+    </section>
+    
+    <script>
+        const currentDateElement = document.getElementById("currentDate");
+        const currentTimeElement = document.getElementById("currentTime");
+
+        function updateDateTime() {
+            const now = new Date();
+            currentDateElement.textContent = now.toLocaleDateString();
+            currentTimeElement.textContent = now.toLocaleTimeString();
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        document.getElementById('logout-button').addEventListener('click', function(event) {
+            // Clear session storage or any authentication tokens
+            sessionStorage.clear();
+            localStorage.clear();
+            // Redirect to login page
+            window.location.href = 'login.html';
+            // Add a new state to the history and then replace it immediately
+            history.pushState(null, '', 'login.html');
+            history.pushState(null, '', 'login.html');
+            history.go(-1);
+        });
+
+        window.addEventListener('popstate', function(event) {
+            if (window.location.pathname.endsWith('login.html')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+
+    <div id="top-part">
+        <div id="logo-container">
+            <img src="../static/images/logo.png" alt="Logo" id="logo-image">
+        </div>
+        <div id="title-container">
+            <h1>Analytics</h1> 
+        </div>
+    </div>
+
+    <div class="notification-bell">🔔</div>
+    <div class="notification-panel"></div>
+    <div id="bottom-part">
+        <div id="welcome-title">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 42px;">Welcome to Analytics</h2>
+        </div>
+
+        <div id="filter-container">
+            <select id="filter-dropdown">
+                <option value="ALL">ALL</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        
+        <div id="data-boxes">
+            <div class="data-box">Total Profit: <span id="total-profit"></span></div>
+            <div class="data-box">Total Sales: <span id="total-sales"></span></div>
+            <div class="data-box">Total Revenue: <span id="total-revenue"></span></div>
+            <div class="data-box">Star Performer: <span id="star-performer"></span></div>
+        </div>
+
+        <div id="chart-container">
+            <div class="chart-box">
+                <canvas id="pie-chart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/analytics.js"></script>
+    <script src="../static/js/navbar.js"></script>
+    <script src="../static/js/voice-control.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="../static/css/style_cna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Inventory Management System</h1>
+    </header>
+
+    <main>
+        <div class="message" id="message"></div>
+        <section class="left-section">
+            <img src="../static/images/banner2.jpeg" alt="Banner Image">
+        </section>
+
+        <section class="right-section">
+            <form id="createAccountForm" method="POST" action="/create_account"> 
+                <div class="logo-container">
+                    <img src="../static/images/logo.png" alt="Logo">
+                </div>
+                <h2>Create New Account</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter a username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
+
+                <label for="securityQuestion1">Security Question 1:</label>
+                <select id="securityQuestion1" name="securityQuestion1" required>
+                    <option value="">--select--</option>
+                    <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                    <option value="What is the title of your favorite song?">What is the title of your favorite song?</option>
+                    <option value="Who is your first crush?">Who is your first crush?</option>
+                </select>
+
+                <label for="securityAnswer1">Security Answer 1:</label>
+                <input type="text" id="securityAnswer1" name="securityAnswer1" placeholder="Enter your answer" required>
+
+                <label for="securityQuestion2">Security Question 2:</label>
+                <select id="securityQuestion2" name="securityQuestion2" required>
+                    <option value="">--select--</option>
+                    <option value="What is your Dream job?">What is your Dream job?</option>
+                    <option value="What is the name of best friend in high school?">What is the name of best friend in high school?</option>
+                    <option value="In Which thing you are best?">In Which thing you are best?</option>
+                </select>
+
+                <label for="securityAnswer2">Security Answer 2:</label>
+                <input type="text" id="securityAnswer2" name="securityAnswer2" placeholder="Enter your answer" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+
+                <button type="submit">Create New Account</button>
+            </form>
+
+            <div class="links">
+                <a href="/for_pas">Forget Username/Password</a>
+                <a href="/">Log In</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Your System, Our Safety.</p>
+    </footer>
+    <script src="../static/js/script_cna.js"></script>
+    <script>
+        // JavaScript to match banner height to form height
+        window.addEventListener('load', function() {
+            const form = document.getElementById('createAccountForm');
+            const banner = document.querySelector('.left-section img');
+
+            const resizeBanner = () => {
+                banner.style.height = `${form.offsetHeight}px`;
+            };
+
+            resizeBanner(); // Initial resizing
+
+            // Resize on window resize to keep them in sync
+            window.addEventListener('resize', resizeBanner);
+        });
+    </script>
+</body>
+</html>

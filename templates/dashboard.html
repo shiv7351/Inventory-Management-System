@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="../static/css/style_dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <h1 id="banner-text">Inventory Management System</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="left-side">
+            <div id="logo-circle"></div>
+            <div id="welcome-message">
+                Welcome<br>
+                To<br>
+                Inventory<br>
+                System
+            </div>
+            <div id="datetime-box">
+                Date: <span id="date"></span><br>
+                Time: <span id="time"></span>
+            </div>
+        </section>
+
+        <section id="right-side">
+            <div id="dashboard-heading">
+                <h2>Dashboard</h2>
+            </div>
+            <div id="dashboard-items">
+                <div class="item" onclick="window.location.href='{{ url_for('product') }}'">Product Management</div>
+                <div class="item" onclick="window.location.href='billing.html'">Billing System</div>
+                <div class="item" onclick="window.location.href='finance.html'">Finance Management</div>
+                <div class="item" onclick="window.location.href='inventory.html'">Inventory</div>
+                <div class="item" onclick="window.location.href='estimate.html'">Estimate Maker</div>
+                <div class="item" onclick="window.location.href='{{ url_for('catalog') }}'">Catalogue</div>
+                <div class="item" onclick="window.location.href='analytics.html'">Analytics</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-text">Your System, Our Safety.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('date').innerText = now.toLocaleDateString();
+            document.getElementById('time').innerText = now.toLocaleTimeString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000); 
+    </script>
+    <script src="../static/js/voice-control.js"></script>
+</body>
+</html>

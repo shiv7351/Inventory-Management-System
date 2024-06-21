@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/billing.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <title>Inventory Management System</title>
+</head>
+<body>
+
+    <input id="hamburger" class="hamburger" type="checkbox"/>
+    <label class="hamburger" for="hamburger">
+        <i></i>
+        <text>
+            <close>close</close>
+            <open>menu</open>
+        </text>
+    </label>
+
+    <section class="drawer-list">
+        <nav>
+            <ul>
+                <li><a href="product.html">Product Management</a></li>
+                <li><a href="billing.html">Billing System</a></li>
+                <li><a href="estimate.html">Estimate Maker</a></li>
+                <li><a href="finance.html">Finance Management</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="catalog.html">Catalogue</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li class="back-button-container">
+                    <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+                </li>
+                <li class="date-time-flexbox">
+                    <div id="date">Date: <span id="currentDate"></span></div>
+                    <div id="time">Time: <span id="currentTime"></span></div>
+                </li>
+                <li><a href="login.html" id="logout-button">Log Out</a></li>
+            </ul>
+        </nav>
+    </section>
+    
+    <script>
+        const currentDateElement = document.getElementById("currentDate");
+        const currentTimeElement = document.getElementById("currentTime");
+
+        function updateDateTime() {
+            const now = new Date();
+            currentDateElement.textContent = now.toLocaleDateString();
+            currentTimeElement.textContent = now.toLocaleTimeString();
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        document.getElementById('logout-button').addEventListener('click', function(event) {
+            // Clear session storage or any authentication tokens
+            sessionStorage.clear();
+            localStorage.clear();
+            // Redirect to login page
+            window.location.href = 'login.html';
+            // Add a new state to the history and then replace it immediately
+            history.pushState(null, '', 'login.html');
+            history.pushState(null, '', 'login.html');
+            history.go(-1);
+        });
+
+        window.addEventListener('popstate', function(event) {
+            if (window.location.pathname.endsWith('login.html')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+    
+    <div id="topPart">
+        <div id="logoCircle">
+            <img src="../static/images/logo.png" alt="Logo">
+        </div>
+        <h1>Billing System</h1>
+    </div>
+
+    <div class="notification-bell">🔔</div>
+    <div class="notification-panel"></div>
+    <div id="bottomPart">
+        <div id="leftPart">
+            <h2 class="partTitle"> <u> Bill Details </u> </h2>
+            <h3 class="subheading">Customer Details:</h3>
+            <form id="customerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required><br><br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+            </form>
+
+            <h3 class="subheading">Product Details:</h3>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Product</th>
+                        <th>Brand</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Model</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <button id="addProductBtn">Add Product</button>
+            <button id="deleteProductBtn">Delete Last Product</button>
+            <button id="refreshBtn">Refresh</button>
+            <button id="generateBillBtn">Generate</button>
+        </div>
+
+        <div id="rightPart">
+            <div class="invoice-header">
+                <div class="company-details">
+                    <h2>Gada Electronics & Electricals</h2>
+                    <p>Civil Lines, Sagar</p>
+                    <p>GSTIN: OPYXCSD34SD78</p>
+                    <p>Mobile Number: 7024652626</p>
+                    <p>Date: <span id="invoiceDate"></span></p>
+                </div>
+                <div class="customer-details">
+                    <h3>Customer Details:</h3>
+                    <p id="invoiceName"></p>
+                    <p id="invoiceAddress"></p>
+                    <p id="invoiceMobile"></p>
+                    <p>Invoice No: <span id="invoiceNumber"></span></p>
+                </div>
+            </div>
+
+            <table class="invoice-table">
+                </table>
+
+            <p>Thanks for Shopping with Us. Visit us again.<br>
+                <i> <u> <b> Note:-</b> </u> </i> <br>
+                1. All the products sold will not be returned or replaced. <br>
+                2. Warranty on products are concerned with respective company. We are not liable for any defect or malfunction. <br>
+                3. All things are under Sagar Juridiction only.
+            </p>
+            <button id="printButton">Print</button>
+
+        </div>
+    </div>
+
+    <script src="../static/js/billing.js"></script>
+    <script src="../static/js/navbar.js"></script>
+    <script src="../static/js/voice-control.js"></script>
+</body>
+</html>

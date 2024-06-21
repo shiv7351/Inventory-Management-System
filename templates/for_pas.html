@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System - Password Recovery</title>
+    <link rel="stylesheet" href="../static/css/style_fp.css">
+    <script src="../static/js/script_fp.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Inventory Management System</h1>
+    </header>
+
+    <main>
+        <section class="left-banner">
+            <img src="../static/images/for2.jpeg" alt="Banner Image">
+        </section>
+
+        <section class="right-form">
+            <div class="logo-container">
+                <img src="../static/images/logo.png" alt="Logo">
+            </div>
+
+            <h2>Recovery Form</h2>
+
+            <form id="recoveryForm" method="POST" action="/recover_password">
+
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityQuestion1">Security Question 1:</label>
+                    <select id="securityQuestion1" name="securityQuestion1" required>
+                        <option value="">--Select--</option>
+                        <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                        <option value="What is the title of your favorite song?">What is the title of your favorite song?</option>
+                        <option value="Who is your first crush?">Who is your first crush?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityAnswer1">Security Answer 1:</label>
+                    <input type="text" id="securityAnswer1" name="securityAnswer1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityQuestion2">Security Question 2:</label>
+                    <select id="securityQuestion2" name="securityQuestion2" required>
+                        <option value="">--Select--</option>
+                        <option value="What is your Dream job?">What is your Dream job?</option>
+                        <option value="What is the name of best friend in high school?">What is the name of best friend in high school?</option>
+                        <option value="In Which thing you are best?">In Which thing you are best?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityAnswer2">Security Answer 2:</label>
+                    <input type="text" id="securityAnswer2" name="securityAnswer2" required>
+                </div>
+
+                <button type="button" id="getCredentialsBtn">Get Username/Password</button>
+            </form>
+
+            <div class="links">
+                <a href="/Create_new_account">Create New Account</a>
+                <a href="/">Log In</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Your System, Our Safety.</p>
+    </footer>
+
+    <div id="messageBox" class="message-box">
+        <div class="message-content">
+            <p id="messageText"></p>
+            <button id="closeMessageBox">Close</button>
+        </div>
+    </div>
+
+    <style>
+        .message-box {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #fff;
+            font-size: 48px;
+            text-align: center;
+            border: 2px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px #f39c12;
+            z-index: 1000;
+        }
+        .message-content {
+            text-align: center;
+        }
+        .message-content p {
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+</html>
