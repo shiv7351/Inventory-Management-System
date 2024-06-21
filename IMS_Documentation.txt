@@ -1,0 +1,199 @@
+Inventory Management System (IMS) Documentation
+Table of Contents
+1.	Introduction
+o	Overview
+o	Features
+2.	System Requirements
+o	Hardware Requirements
+o	Software Requirements
+3.	Installation Guide
+o	Setting Up the Environment
+o	Installing Dependencies
+o	Running the Application
+4.	User Guide
+o	Logging In
+o	Dashboard
+o	Inventory Management
+o	Billing and Estimates
+o	Analytics
+o	Notifications
+5.	Admin Guide
+o	User Management
+o	System Configuration
+6.	Developer Guide
+o	Code Structure
+o	Database Schema
+o	API Endpoints
+7.	Testing and Quality Assurance
+o	Testing Approaches
+o	Test Cases
+8.	Future Enhancements
+o	Planned Features
+o	Improvements
+9.	References
+________________________________________
+
+
+1. Introduction
+Overview
+The Inventory Management System (IMS) is a comprehensive web application designed to streamline the inventory, billing, and financial operations of an Electronics and Electricals Shop. Developed using Flask, MySQL, HTML, CSS, and JavaScript, the IMS provides an efficient and user-friendly platform for managing shop activities, reducing paperwork, and improving service efficiency.
+Features
+•	User authentication and authorization
+•	Dynamic inventory management
+•	Billing and estimate generation
+•	Product catalog management
+•	Voice navigation
+•	Financial management and reporting
+•	Real-time analytics and dynamic charts
+•	Sliding menu bar for easy navigation
+•	Real-time notifications for low stock alerts
+
+
+2. System Requirements
+    Hardware Requirements
+    •	Processor: Intel Core i3 or higher
+    •	RAM: 4GB or higher
+    •	Storage: 500MB of free space
+    •	Internet connection for web access
+    Software Requirements
+    •	Operating System: Windows, macOS, or Linux
+    •	Python 3.6 or higher
+    •	MySQL Server
+    •	Web browser (Chrome, Firefox, Edge)
+
+
+3. Installation Guide
+    Setting Up the Environment
+        1.	Install Python from the official Python website.
+        2.	Install MySQL Server from the official MySQL website.
+    Installing Dependencies
+        1.	Clone the IMS repository from GitHub:
+            bash
+            Copy code
+            git clone https://github.com/shiv7351/Inventory-Management-System.git
+        2.	Navigate to the project directory:
+            bash
+            Copy code
+            cd inventory-management-system
+        3.	Install the required Python packages:
+            Copy code
+            pip install -r requirements.txt
+            Running the Application
+                1.	Initialize the database:
+                    csharp
+                    Copy code
+                    flask db init
+                    flask db migrate -m "Initial migration"
+                    flask db upgrade
+                2.	Start the Flask application:
+                    arduino
+                    Copy code
+                    flask run
+                3.	Access the application in your web browser at http://localhost:5000.
+    To import the MySQL databases from the exported SQL file, follow these steps:
+        Using MySQL Workbench:
+            Open MySQL Workbench and connect to the MySQL server on the target system.
+            Go to Server > Data Import.
+            Select the option to import from a Self-Contained File.
+            Browse and select the exported SQL file (e.g., databases_export.sql) from your pendrive.
+            Click Start Import.
+
+        Using Command Line:
+            Open Command Prompt (Windows) or Terminal (Linux/Mac) on the target system.
+            Navigate to the directory where the SQL file is located (your pendrive).
+            Run the following command:
+            mysql -u username -p new_database_name < databases_export.sql
+            Replace username with your MySQL username and new_database_name with the desired name for the new database.
+        Remember to adjust the commands based on your specific database names and usernames. After importing, verify that the data and structure are intact.
+
+
+
+4. User Guide
+    Logging In
+    1.	Open the application in your web browser.
+    2.	Enter your username and password on the login page.
+    3.	Click "Login" to access the dashboard.
+    Dashboard
+    •	View key metrics such as total sales, total revenue, top-performing products, and recent notifications.
+    •	Navigate to different sections using the sliding menu bar.
+    Inventory Management
+    •	View current inventory levels.
+    •	Add, edit, or delete products.
+    •	Update stock levels and set low stock alerts.
+    Billing and Estimates
+    •	Create and print invoices for customer purchases.
+    •	Generate and manage estimates for potential sales.
+    Analytics
+    •	View dynamic charts and graphs for sales trends, profit margins, and other analytics.
+    •	Apply filters to view specific data ranges.
+    Notifications
+    •	Receive real-time alerts for low stock levels and other important events.
+
+
+
+5. Admin Guide
+    User Management
+    •	Add, edit, or delete user accounts.
+    •	Assign roles and permissions to users.
+        System Configuration
+    •	Configure application settings such as tax rates, discount policies, and notification thresholds.
+
+
+6. Developer Guide
+    Code Structure
+    •	app/: Contains the Flask application modules.
+    •	templates/: Contains HTML templates for the front-end.
+    •	static/: Contains static files such as CSS and JavaScript.
+    •	models.py: Defines the database schema.
+    •	routes.py: Defines the application routes.
+    •	config.py: Contains configuration settings.
+    Database Schema
+    •	Users: Stores user information and roles.
+    •	Products: Stores product details and stock levels.
+    •	Invoices: Stores billing information.
+    •	Analytics: Stores data for reporting and analytics.
+    API Endpoints
+    •	/login: User login endpoint.
+    •	/dashboard: Retrieves dashboard data.
+    •	/inventory: CRUD operations for inventory management.
+    •	/billing: Endpoint for creating invoices.
+    •	/analytics: Retrieves data for analytics and reporting.
+
+
+
+7. Testing and Quality Assurance
+    Testing Approaches
+    •	Unit Testing: Testing individual components using the unittest framework.
+    •	Integration Testing: Testing the interaction between different modules.
+    •	User Acceptance Testing (UAT): Final testing phase with real users.
+    Test Cases
+    •	Login Functionality: Test valid and invalid login attempts.
+    •	Inventory Management: Test adding, editing, and deleting products.
+    •	Billing System: Test invoice generation and printing.
+    •	Analytics: Test data retrieval and chart generation.
+
+
+
+8. Future Enhancements
+    Planned Features
+    •	Mobile app integration for on-the-go access.
+    •	Predictive analytics using machine learning.
+    •	Enhanced voice navigation with natural language processing.
+    •	Integration with e-commerce platforms for unified inventory management.
+    Improvements
+    •	Optimization for handling larger datasets.
+    •	Performance improvements under high traffic conditions.
+    •	Enhanced user interface for better usability.
+
+
+
+9. References
+    1.	Grinberg, M. (2018). Flask Web Development: Developing Web Applications with Python. O'Reilly Media.
+    2.	Williams, N., & Lavin, M. (2017). Learning MySQL. O'Reilly Media.
+    3.	Duckett, J. (2014). HTML and CSS: Design and Build Websites. Wiley.
+    4.	Flanagan, D. (2020). JavaScript: The Definitive Guide. O'Reilly Media.
+    5.	Pilgrim, M. (2009). Dive Into Python 3. Apress.
+    6.	Lutz, M. (2013). Learning Python. O'Reilly Media.
+    7.	Jeston, J., & Nelis, J. (2014). Business Process Management. Routledge.
+    8.	Sommerville, I. (2015). Software Engineering. Addison-Wesley.
+
