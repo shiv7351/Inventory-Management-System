@@ -1,0 +1,758 @@
+/* General Styling */
+body {
+    font-family: 'Dancing Script', cursive; /* Apply cursive font to entire body */
+    background-color: #1a202c; /* Dark blue background (adjust as needed) */
+    color: #f7fafc; /* Light text color for better contrast */
+    margin: 0;
+}
+
+/* Top Part Styling */
+.top-part {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space between logo and title */
+    padding: 10px; 
+    background-color: #2d3748; /* Slightly darker blue for top part */
+    border-bottom: 2px solid #4a5568; /* Glowing border effect */
+}
+
+.logo-container {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; 
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px #4299e1; /* Glowing border */
+    transition: transform 0.3s ease; /* Add a subtle transition */
+}
+
+.logo-container:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure logo fits perfectly within circle */
+}
+
+.title {
+    font-size: 5rem;
+    text-shadow: 0 0 10px #4299e1; /* Subtle glowing effect */
+}
+
+
+/* Bottom Part Styling */
+.bottom-part {
+    display: flex;
+    height: calc(100vh - 140px); /* Take up remaining height, minus top part */
+}
+
+/* Left Part Styling */
+.left-part {
+    width: 25%; /* Adjust width as needed */
+    background-color: #2c3646;
+    padding: 20px;
+    border-right: 2px solid #4a5568;
+}
+
+.left-part .flexbox {
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer; /* Indicate clickability */
+    border: 2px solid #4a5568; /* Glowing border */
+    border-radius: 8px;
+    box-shadow: 0 0 5px #4299e1;
+    font-size: 1.2rem;
+    color: #cbd5e0; /* Lighter text color for left part */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Right Part Styling */
+.right-part {
+    width: 75%;
+    background-color: #242f3d; /* Slightly different shade for contrast */
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.welcome-message {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #4299e1;
+}
+
+/* Table Container Styling */
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-container th,
+.table-container td {
+    border: 1px solid #4a5568;
+    padding: 10px;
+    text-align: left;
+}
+
+.table-container th {
+    background-color: #313d51; /* Slightly darker for headers */
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* Dropdown Styling */
+.electronics-dropdown .dropdown-content {
+    display: none; /* Hide by default */
+    position: absolute;
+    background-color: #2c3646;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.electronics-dropdown:hover .dropdown-content {
+    display: block; /* Show on hover */
+}
+
+.electronics-dropdown .dropdown-content .flexbox {
+    color: #cbd5e0; /* Consistent color with other items */
+}
+
+/* Additional Styling (Apply to all flexboxes and buttons) */
+.flexbox, 
+button {
+    display: flex; /* Ensure flexbox layout */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove default link underline */
+    box-shadow: 0 0 5px #4299e1; /* Glowing border */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+}
+
+.flexbox:hover,
+button:hover {
+    transform: scale(1.05); /* Subtle scale on hover */
+    box-shadow: 0 0 10px #4299e1; /* More pronounced glow */
+}
+
+/* Left Part Flexbox Enhancements */
+.left-part .flexbox {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 20px; /* Increased padding for a more spacious look */
+    font-size: 1.4rem; /* Slightly larger font size */
+    background-color: #2c3646;
+    box-shadow: inset 0 0 5px #4299e1; /* Inset shadow for a subtle glow effect */
+}
+
+/* Dropdown Enhancements */
+.electronics-dropdown .dropdown-content .flexbox {
+    padding: 10px 20px; /* Added padding to list items */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.electronics-dropdown .dropdown-content .flexbox:hover {
+    background-color: #38445a; /* Slightly darker background on hover */
+}
+
+/* Table Styling Enhancements */
+.table-container table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.table-container th {
+    text-align: center; /* Center text in headers */
+}
+
+.table-container td {
+    text-align: center; /* Center text in table cells */
+}
+
+/* Scrollbar Styling */
+.right-part::-webkit-scrollbar {
+    width: 8px;
+}
+
+.right-part::-webkit-scrollbar-track {
+    background: #2c3646;
+}
+
+.right-part::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+/* Additional Animations */
+.logo-container:hover {
+    animation: rotate 2s linear infinite; /* Add a rotating animation on hover */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glowing Borders for Sections */
+.top-part, .bottom-part, .left-part, .right-part {
+    border: 2px solid transparent; /* Initial transparent border */
+    box-shadow: 0 0 10px #4299e1; /* Initial blue glow */
+}
+
+.top-part:hover, .bottom-part:hover, .left-part:hover, .right-part:hover {
+    box-shadow: 0 0 15px #e80d0d; /* Red glow on hover */
+}
+
+body {
+    overflow: hidden; /* Hide default scrollbars */
+}
+
+.flexbox, button {
+    cursor: pointer;
+    position: relative; /* For pseudo-element positioning */
+}
+
+.flexbox::before,
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #4299e1, transparent); /* Blue gradient for glow */
+    transition: transform 0.5s;
+    transform-origin: 0%; /* Originate from the left */
+}
+
+.flexbox:hover::before,
+button:hover::before {
+    transform: translateX(100%); /* Slide across on hover */
+}
+
+/* Dropdown Enhancements */
+.electronics-dropdown .dropdown-content {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Styling Enhancements */
+.table-container th {
+    position: sticky; /* Keep headers fixed when scrolling */
+    top: 0;
+    z-index: 1;
+}
+
+/* Additional Animations */
+.logo-container {
+    animation: pulse 2s infinite; /* Add a subtle pulsing animation */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px #0bc5ea;
+    }
+    50% {
+        box-shadow: 0 0 25px #0bc5ea; /* Brighter glow in the middle */
+    }
+    100% {
+        box-shadow: 0 0 15px #0bc5ea;
+    }
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to bottom right, #1a202c, #2c3646); /* Gradient background */
+    color: #f7fafc;
+    margin: 0;
+}
+
+/* Top Part Styling */
+.top-part {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    padding: 20px;
+    background-color: #2d3748;
+    box-shadow: 0 4px 8px rgba(59, 61, 81, 0.5); /* Subtle shadow */
+}
+
+.logo-container {
+    width: 120px; /* Slightly bigger logo */
+    height: 120px;
+    margin-right: 20px; /* Add some space between logo and title */
+    box-shadow: 0 0 15px #0bc5ea; /* Cyan glow */
+    transition: transform 0.3s ease;
+}
+
+.title {
+    font-size: 4rem; 
+    text-shadow: 0 0 15px #f6e05e; /* Yellow glow */
+}
+
+/* Bottom Part Styling */
+.bottom-part {
+    display: flex;
+    height: calc(100vh - 160px); /* Adjust height if needed */
+}
+
+/* Left Part Styling */
+.left-part .flexbox {
+    box-shadow: 0 0 10px #dca306; /* Purple glow */ /* Added glow effect */
+}
+.flexbox:hover::after,
+button:hover::after {
+    box-shadow: 0 0 10px #cb7709;
+}
+
+/* Right Part Styling */
+.right-part {
+    width: 75%;
+    background: linear-gradient(to bottom left, #242f3d, #313d51); /* Gradient for right part */
+    padding: 20px;
+    overflow-y: auto;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Align items vertically */
+}
+
+.welcome-message {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 0 0 15px #48bb78; /* Green glow */
+    transform: rotate(-10deg); /* Diagonal effect */
+}
+
+body {
+    overflow: hidden;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.flexbox, button {
+    backface-visibility: hidden; /* Prevent flickering on hover */
+    transform: translateZ(0); /* Fix potential issues in some browsers */
+}
+
+/* Top Part Styling */
+.top-part {
+    transform-style: preserve-3d; /* Enable 3D transforms for children */
+}
+
+.logo-container {
+    transform: translateZ(50px); /* Elevate logo slightly */
+}
+
+/* Bottom Part Styling */
+.bottom-part {
+    transform-style: preserve-3d;
+}
+
+.welcome-message {
+    font-size: 3.5rem; /* Make it bigger */
+    transform: rotate(-15deg) translateZ(30px); /* More dramatic diagonal effect */
+}
+
+.table-container table {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+body {
+    overflow: hidden;
+    background-color: #1a202c; /* Solid dark background */
+}
+
+.flexbox, button {
+    filter: drop-shadow(0 0 5px #4299e1); /* Add subtle drop shadow for depth */
+}
+
+/* Top Part Styling */
+.top-part {
+    background: linear-gradient(45deg, #2d3748, #252e3c); /* Angled gradient */
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px #0bc5ea; /* Large, diffuse glow */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.logo-container:hover::after {
+    opacity: 1;
+}
+
+.left-part .flexbox:hover {
+    transform: translateZ(30px); /* More elevation on hover */
+}
+
+/* Dropdown Enhancements */
+.electronics-dropdown .dropdown-content {
+    border: 2px solid #4299e1; /* Add a subtle border to the dropdown */
+}
+
+.electronics-dropdown .dropdown-content .flexbox::before {
+    background: linear-gradient(120deg, transparent, #9980fa, transparent); /* Purple glow for dropdown items */
+}
+
+/* Table Styling Enhancements */
+.table-container th,
+.table-container td {
+    white-space: nowrap; /* Prevent text wrapping in cells */
+}
+
+/* Right Part Styling */
+.right-part {
+    background: radial-gradient(circle, #242f3d, #1a202c); /* Radial gradient */
+}
+
+/* Additional Animations */
+.welcome-message {
+    animation: glowText 3s ease-in-out infinite alternate; /* Glowing text effect */
+}
+
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 15px #48bb78;
+    }
+    to {
+        text-shadow: 0 0 30px #48bb78, 0 0 10px #48bb78, 0 0 5px #38a169; /* Multiple shadows for a richer glow */
+    }
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .drawer-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-100vw, 0);
+    transition: transform 0.45s ease;
+    background-color: rgba(25, 17, 61, 0.9);
+    border-right: 2px solid;
+    border-image: linear-gradient(45deg, crimson, green) 1;
+    padding-top: 75px;
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+    ul {
+        height: 100%;
+        overflow: auto;
+    }
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: #FEFEFE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #0a46a8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                color: #FF00FF;
+                box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+            }
+        }
+    }
+  }
+  
+  input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .drawer-list {
+            transform: translateX(0);
+        }
+        & ~ label {
+            > i {
+                background-color: transparent;
+                transform: rotate(90deg);
+                &:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+            close {
+                color: #FEFEFE;
+                width: 100%;
+            }
+            open {
+                color: rgba(0, 0, 0, 0);
+                width: 0;
+            }
+        }
+    }
+  }
+  
+  label.hamburger {
+    z-index: 9999;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+    text {
+        close,
+        open {
+            text-transform: uppercase;
+            font-size: .8em;
+            position: absolute;
+            transform: translateY(50px);
+            text-align: center;
+            overflow: hidden;
+            transition: width .25s .35s, color .45s .35s;
+        }
+        close {
+            color: rgba(0, 0, 0, 0);
+            right: 0;
+            width: 0;
+        }
+        open {
+            color: #FEFEFE;
+            width: 100%;
+        }
+    }
+    > i {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        background-color: #FEFEFE;
+        pointer-events: auto;
+        transition-duration: .35s;
+        transition-delay: .35s;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            background-color: #FEFEFE;
+            content: "";
+            transition: transform 0.35s;
+            transform-origin: 50% 50%;
+        }
+        &:before {
+            transform: translate(-50%, -14px);
+        }
+        &:after {
+            transform: translate(-50%, 14px);
+        }
+    }
+  }
+  
+  label.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .back-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    a {
+        text-decoration: none;
+        color: #FEFEFE;
+        padding: 1rem;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            color: #FF00FF;
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+        }
+    }
+  }
+  
+  .date-time-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #FEFEFE;
+    div {
+        background: #333;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+        }
+    }
+  }
+  
+/* General Styling */
+body {
+    overflow: hidden;
+    perspective: 1000px;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation Bar Styling */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Top Part Styling */
+.top-part {
+    z-index: 10; /* Ensure the top-part is above the navigation bar */
+    background: linear-gradient(45deg, #2d3748, #252e3c);
+}
+
+/* Bottom Part Styling */
+.bottom-part {
+    margin-top: 75px; /* Add margin to account for navbar height */
+    height: calc(100vh - 235px); /* Adjust height based on navbar and top-part */
+    z-index: 5; /* Ensure bottom-part is below the top-part */
+}
+/* Left Part Styling */
+.left-part {
+    z-index: 6; /* Ensure left-part is above bottom-part */
+}
+
+/* Right Part Styling */
+.right-part {
+    z-index: 6; /* Ensure right-part is above bottom-part */
+}
+
+
+/* Navigation Bar Styling */
+.drawer-list {
+    z-index: 100; /* Set a high z-index to ensure it's on top */
+}
+
+input.hamburger:checked ~ .drawer-list {
+    transform: translateX(0); /* Slide in the navigation bar on checked state */
+}
+
+/* Top Part Styling */
+.top-part {
+    z-index: 9;  /* Ensure it's below the navigation bar */
+}
+
+
+.table-container {
+    overflow: auto;
+    overflow-y: auto; /* Hide vertical scrollbar */
+    max-height: 100vh;
+    padding: 20px;
+    margin-left: 20%; /* Adjust as needed */
+}
+
+.table-container h2 {
+    text-align: center;
+    font-size: 2em; /* Increase font size for table name */
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive; /* Example font family */
+    /* margin-left: 20%; Adjust as needed */
+}
+
+table {
+    /* width: auto; */
+    width: calc(90% - 40px); /* Adjust width to account for margin */
+    border-collapse: collapse;
+    font-size: 1.2em; /* Increase font size for table content */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for table cells */
+    text-align: center; /* Center align text in table cells */
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+.table-container h2 {
+    text-align: center;
+    font-size: 2em; /* Increase font size for table name */
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive; /* Example font family */
+    text-transform: capitalize; /* Convert table name to sentence case */
+}
+
+table {
+    width: auto; /* Adjust width automatically */
+    border-collapse: collapse;
+    font-size: 1.2em; /* Increase font size for table content */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for table cells */
+    text-align: center; /* Center align text in table cells */
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.5em;
+}

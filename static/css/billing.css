@@ -1,0 +1,882 @@
+
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive; /* Cursive font for the entire page */
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text color */
+}
+
+h1, h2, h3 {
+    text-align: center; /* Center titles */
+}
+
+/* Top Part Styling */
+#topPart {
+    background-color: #282828; /* Slightly darker shade for the top part */
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align logo and title vertically */
+    border-bottom: 2px solid #007bff; /* Glowing blue border at the bottom */
+    box-shadow: 0 0 10px #007bff; /* Glowing effect for the border */
+}
+
+#logoCircle {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #007bff; /* Glowing blue border */
+    box-shadow: 0 0 10px #007bff; /* Glowing effect */
+    margin-right: 20px;
+    overflow: hidden; /* Hide any image overflow */
+}
+
+#logoCircle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the image cover the circle */
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 0 0 10px #007bff; /* Glowing text effect */
+}
+
+/* Bottom Part Styling */
+#bottomPart {
+    display: flex;
+}
+
+#leftPart, #rightPart {
+    width: 50%;
+    padding: 20px;
+    background-color: #303030; /* Darker shade for the bottom parts */
+    border: 2px solid #007bff; /* Glowing blue border */
+    box-shadow: 0 0 10px #007bff; /* Glowing effect */
+}
+
+/* Left Part Styling */
+#leftPart h2, #leftPart h3 {
+    color: #00ffff; /* Light blue color for titles */
+}
+
+#leftPart form {
+    margin-bottom: 20px;
+}
+
+#leftPart label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#leftPart input, #leftPart select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#leftPart button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+#leftPart button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #bottomPart {
+        flex-direction: column; /* Stack parts vertically on smaller screens */
+    }
+
+    #leftPart, #rightPart {
+        width: 100%; /* Make each part take full width */
+    }
+}
+
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Top Part Styling */
+#topPart {
+    background-color: #282828;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
+
+#logoCircle {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    box-shadow: 0 0 15px #007bff;
+    margin-right: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+#logoCircle:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+#logoCircle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 0 0 10px #007bff;
+}
+
+/* Bottom Part Styling */
+#bottomPart {
+    display: flex;
+}
+
+#leftPart, #rightPart {
+    width: 50%;
+    padding: 20px;
+    background-color: #303030;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
+
+/* Left Part Styling */
+#leftPart h2, #leftPart h3 {
+    color: #00ffff;
+}
+
+#leftPart form {
+    margin-bottom: 20px;
+}
+
+#leftPart label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#leftPart input, #leftPart select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #404040; /* Darker input background */
+    color: #e0e0e0; /* Lighter text color for inputs */
+}
+
+#leftPart button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#leftPart button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px #007bff; /* Add glow on hover */
+}
+
+/* Right Part Styling (Invoice) */
+#rightPart .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#rightPart .invoice-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    margin-bottom: 20px;
+}
+
+#rightPart .invoice-table th, #rightPart .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#rightPart #printButton {
+    background-color: #28a745; /* Green button */
+    /* ... (rest of the button styles are the same as other buttons) ... */
+}
+
+/* 3D Effect for Buttons */
+#leftPart button, #rightPart button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+#leftPart button:hover, #rightPart button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #bottomPart {
+        flex-direction: column; 
+    }
+
+    #leftPart, #rightPart {
+        width: 100%; 
+    }
+}
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #1a1a1a; /* Darker background */
+    color: #f0f0f0;
+    line-height: 1.6; /* Improve readability with better line height */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    text-shadow: 0 0 5px #007bff; /* More subtle glow on titles */
+}
+
+#logoCircle:hover {
+    transform: scale(1.1) rotate(10deg); /* Add a slight rotation on hover */
+}
+
+
+/* Bottom Part Styling */
+#bottomPart {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next line on smaller screens */
+}
+
+#leftPart, #rightPart {
+    flex: 1 1 400px; /* Take at least 400px, but grow/shrink as needed */
+    min-height: 400px; /* Ensure minimum height for content */
+    margin: 10px; /* Add some margin for spacing */
+    padding: 20px;
+    background-color: #303030; 
+    border: 2px solid #007bff; 
+    box-shadow: 0 0 10px #007bff;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Left Part Styling */
+#leftPart h2, #leftPart h3 {
+    color: #00ffff;
+}
+
+#leftPart form label {
+    font-weight: bold;
+}
+
+#leftPart input, #leftPart select {
+    font-size: 1.1em; /* Slightly larger font size for inputs */
+}
+
+/* Table Styling */
+#productTable, .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+}
+
+#productTable th, #productTable td, .invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#productTable th {
+    background-color: #444; /* Darker header background */
+}
+
+#productTable input[type="number"] {
+    width: 80px; /* Adjust width for quantity and rate inputs */
+}
+
+
+/* Additional Styles */
+.partTitle {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.subheading {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #1a1a1a; /* Darker background */
+    color: #f0f0f0;
+    line-height: 1.6; 
+    margin: 0; /* Remove default body margins */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    text-shadow: 0 0 5px #007bff;
+}
+
+/* Top Part Styling */
+#topPart {
+    background-color: #282828;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title and logo horizontally */
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
+
+#logoCircle img {
+    filter: drop-shadow(0 0 5px #007bff); /* Add a subtle drop shadow to the logo */
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0 20px; /* Add some margin between logo and title */
+}
+
+/* Bottom Part Styling */
+#bottomPart {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px; /* Add padding around the entire bottom part */
+}
+
+#leftPart, #rightPart {
+    flex: 1 1 400px; 
+    min-height: 400px; 
+    margin: 10px;
+    padding: 20px;
+    background-color: #303030; 
+    border: 2px solid #007bff; 
+    box-shadow: 0 0 10px #007bff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Right Part (Invoice) Styling */
+#rightPart h2, #rightPart h3 {
+    color: #00ffff; /* Consistent color for titles in right part */
+    margin-top: 0; /* Remove default top margin */
+}
+
+#rightPart p {
+    margin-bottom: 5px; /* Reduce space between paragraphs */
+}
+
+#rightPart .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align company and customer details to top */
+    margin-bottom: 20px;
+}
+
+
+#productTable th, #productTable td, .invoice-table th, .invoice-table td {
+    vertical-align: middle; /* Center text vertically in table cells */
+}
+
+
+/* Additional Styles */
+.partTitle {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.subheading {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #topPart {
+        flex-direction: column; /* Stack logo and title vertically */
+    }
+
+    #logoCircle {
+        margin-bottom: 10px; /* Add space below logo when stacked */
+    }
+}
+/* Print Styles */
+@media print {
+    /* Hide everything except the right part */
+    body * { visibility: hidden; }
+    #rightPart, #rightPart * { visibility: visible; }
+
+    /* Additional print-specific styles */
+    body {
+        margin: 0; /* Remove margins for clean printing */
+    }
+
+    #rightPart {
+        width: 100%; /* Make the right part take full width */
+        box-shadow: none;
+    }
+}
+
+.deleteRowBtn {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deleteRowBtn:hover {
+    background-color: #c82333;
+    box-shadow: 0 0 10px #dc3545;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .drawer-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-100vw, 0);
+    transition: transform 0.45s ease;
+    background-color: rgba(25, 17, 61, 0.9);
+    border-right: 2px solid;
+    border-image: linear-gradient(45deg, crimson, green) 1;
+    padding-top: 75px;
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+    ul {
+        height: 100%;
+        overflow: auto;
+    }
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: #FEFEFE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #0a46a8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                color: #FF00FF;
+                box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+            }
+        }
+    }
+  }
+  
+  input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .drawer-list {
+            transform: translateX(0);
+        }
+        & ~ label {
+            > i {
+                background-color: transparent;
+                transform: rotate(90deg);
+                &:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+            close {
+                color: #FEFEFE;
+                width: 100%;
+            }
+            open {
+                color: rgba(0, 0, 0, 0);
+                width: 0;
+            }
+        }
+    }
+  }
+  
+  label.hamburger {
+    z-index: 9999;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+    text {
+        close,
+        open {
+            text-transform: uppercase;
+            font-size: .8em;
+            position: absolute;
+            transform: translateY(50px);
+            text-align: center;
+            overflow: hidden;
+            transition: width .25s .35s, color .45s .35s;
+        }
+        close {
+            color: rgba(0, 0, 0, 0);
+            right: 0;
+            width: 0;
+        }
+        open {
+            color: #FEFEFE;
+            width: 100%;
+        }
+    }
+    > i {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        background-color: #FEFEFE;
+        pointer-events: auto;
+        transition-duration: .35s;
+        transition-delay: .35s;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            background-color: #FEFEFE;
+            content: "";
+            transition: transform 0.35s;
+            transform-origin: 50% 50%;
+        }
+        &:before {
+            transform: translate(-50%, -14px);
+        }
+        &:after {
+            transform: translate(-50%, 14px);
+        }
+    }
+  }
+  
+  label.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .back-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    a {
+        text-decoration: none;
+        color: #FEFEFE;
+        padding: 1rem;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            color: #FF00FF;
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+        }
+    }
+  }
+  
+  .date-time-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #FEFEFE;
+    div {
+        background: #333;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+        }
+    }
+  }
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Top Part Styling */
+#topPart {
+    background-color: #282828;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
+
+#logoCircle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    box-shadow: 0 0 15px #007bff;
+    margin-right: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+#logoCircle:hover {
+    transform: scale(1.1);
+}
+
+#logoCircle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 0 0 10px #007bff;
+}
+
+/* Bottom Part Styling */
+#bottomPart {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#leftPart, #rightPart {
+    width: 100%;
+    max-width: 50%;
+    padding: 20px;
+    background-color: #303030;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px #007bff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#leftPart:hover, #rightPart:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #007bff;
+}
+
+/* Left Part Styling */
+#leftPart h2, #leftPart h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+}
+
+#leftPart form {
+    margin-bottom: 20px;
+}
+
+#leftPart label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ffff;
+}
+
+#leftPart input, #leftPart select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #404040;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#leftPart input:focus, #leftPart select:focus {
+    background-color: #505050;
+    border-color: #00ffff;
+}
+
+#leftPart button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#leftPart button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+}
+
+#leftPart button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+#leftPart button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 20px #007bff;
+}
+
+#leftPart button:active {
+    background-color: #003f7f;
+}
+
+#leftPart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#leftPart table th, #leftPart table td {
+    border: 1px solid #007bff;
+    padding: 10px;
+    text-align: left;
+    background-color: #404040;
+    color: #e0e0e0;
+}
+
+#leftPart table th {
+    background-color: #505050;
+}
+
+/* Right Part Styling (Invoice) */
+#rightPart .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #404040;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #007bff;
+}
+
+#rightPart .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#rightPart .invoice-table th, #rightPart .invoice-table td {
+    border: 1px solid #007bff;
+    padding: 10px;
+    text-align: left;
+    background-color: #404040;
+    color: #e0e0e0;
+}
+
+#rightPart .invoice-table th {
+    background-color: #505050;
+}
+
+#rightPart #printButton {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#rightPart #printButton:hover {
+    background-color: #218838;
+    box-shadow: 0 0 20px #28a745;
+}
+
+#rightPart #printButton:active {
+    background-color: #1e7e34;
+}
+
+@media (max-width: 768px) {
+    #bottomPart {
+        flex-direction: column;
+    }
+
+    #leftPart, #rightPart {
+        max-width: 100%;
+    }
+}
+

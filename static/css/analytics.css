@@ -1,0 +1,490 @@
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(135deg, #2980b9, #3498db); /* Blue gradient background */
+    color: #ecf0f1; /* Slightly off-white text for better contrast */
+    margin: 0;
+    overflow: hidden; /* Hide overflow for smoother animations */
+}
+
+/* Top Part Styles */
+#top-part {
+    display: flex;
+    justify-content: center; /* Center logo and title */
+    align-items: center;
+    padding: 20px 40px; /* Increased padding for a more spacious look */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Darker gradient for top part */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    border-bottom: 2px solid transparent; /* Initially transparent border */
+    transition: border-bottom-color 0.3s ease;
+}
+
+#top-part:hover {
+    border-bottom-color: #f2711c; /* Saffron glow on hover */
+}
+
+#logo-container {
+    width: 120px; /* Larger logo */
+    height: 120px;
+    margin-right: 20px; /* Add space between logo and title */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px #3498db; /* Brighter blue glow */
+    perspective: 1000px;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+#logo-container:hover {
+    transform: scale(1.05) rotateY(45deg);
+}
+
+#logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(15deg); /* Initial slight rotation */
+}
+
+#title-container {
+    text-align: center;
+    /* flex-grow: 1; Allow the title to take up available space */
+}
+
+#title-container h1 {
+    font-size: 5em; /* Larger title */
+    text-shadow: 0 0 15px #2980b9; /* Blue glow for title */
+    animation: glow 2s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px #2980b9; }
+    to { text-shadow: 0 0 25px #2980b9; }
+}
+
+/* Bottom Part Styles */
+#bottom-part {
+    padding: 20px 40px;
+    border-top: 2px solid transparent;
+    transition: border-top-color 0.3s ease;
+}
+
+#bottom-part:hover {
+    border-top-color: #f2711c;
+}
+
+#welcome-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#welcome-title h2 {
+    font-size: 3em;
+    text-shadow: 0 0 10px #4299e1; /* Blue glowing text */
+}
+
+/* Data Boxes Styles */
+#data-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.data-box, .chart-box {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 30px; /* Increased padding for bigger boxes */
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #3498db; /* Increased saffron glow intensity */
+    text-align: center;
+    font-size: 1.5em; /* Larger font size */
+    flex: 1 1 40%; /* Takes up to 40% of the container width */
+    min-width: 250px; /* Minimum width for smaller screens */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+    perspective: 800px; /* Add perspective for 3D effect */
+}
+
+.data-box:hover {
+    transform: translateY(-5px) rotateX(15deg); /* Tilt on hover */
+}
+
+/* Chart Container Styles */
+#chart-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chart-box {
+    min-width: 300px;
+}
+
+#title-container h1 {
+    font-size: 5em; /* Larger title */
+    text-shadow: 0 0 15px #2980b9;
+    animation: glow 2s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px #2980b9; }
+    to { text-shadow: 0 0 25px #2980b9; }
+}
+
+/* ... (Bottom Part and Data Boxes Styles) ... */
+.data-box {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient for boxes */
+    box-shadow: 0 0 15px #3498db; /* Brighter glow for boxes */
+}
+
+
+/* Chart Container and Box Styles */
+#chart-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chart-box { 
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient for charts */
+    box-shadow: 0 0 15px #3498db; /* Brighter glow for charts */
+}
+
+#title-container h1 {
+    font-size: 5em; 
+    text-shadow: 0 0 15px #f2711c; /* Saffron glow for title */
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px #f2711c; }
+    to { text-shadow: 0 0 25px #f2711c; }
+}
+
+/* Bottom Part Styles */
+#bottom-part {
+    padding: 20px 40px; 
+    border-top: 2px solid transparent; 
+    transition: border-top-color 0.3s ease;
+}
+
+#bottom-part:hover {
+    border-top-color: #f2711c;
+}
+
+/* ... (Data Boxes and Chart Styles) ... */
+.data-box, .chart-box {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    box-shadow: 0 0 20px #f2711c; /* Increased saffron glow intensity */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .drawer-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-100vw, 0);
+    transition: transform 0.45s ease;
+    background-color: rgba(25, 17, 61, 0.9);
+    border-right: 2px solid;
+    border-image: linear-gradient(45deg, crimson, green) 1;
+    padding-top: 75px;
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+    ul {
+        height: 100%;
+        overflow: auto;
+    }
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: #FEFEFE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #0a46a8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                color: #FF00FF;
+                box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+            }
+        }
+    }
+  }
+  
+  input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .drawer-list {
+            transform: translateX(0);
+        }
+        & ~ label {
+            > i {
+                background-color: transparent;
+                transform: rotate(90deg);
+                &:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+            close {
+                color: #FEFEFE;
+                width: 100%;
+            }
+            open {
+                color: rgba(0, 0, 0, 0);
+                width: 0;
+            }
+        }
+    }
+  }
+  
+  label.hamburger {
+    z-index: 9999;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+    text {
+        close,
+        open {
+            text-transform: uppercase;
+            font-size: .8em;
+            position: absolute;
+            transform: translateY(50px);
+            text-align: center;
+            overflow: hidden;
+            transition: width .25s .35s, color .45s .35s;
+        }
+        close {
+            color: rgba(0, 0, 0, 0);
+            right: 0;
+            width: 0;
+        }
+        open {
+            color: #FEFEFE;
+            width: 100%;
+        }
+    }
+    > i {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        background-color: #FEFEFE;
+        pointer-events: auto;
+        transition-duration: .35s;
+        transition-delay: .35s;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            background-color: #FEFEFE;
+            content: "";
+            transition: transform 0.35s;
+            transform-origin: 50% 50%;
+        }
+        &:before {
+            transform: translate(-50%, -14px);
+        }
+        &:after {
+            transform: translate(-50%, 14px);
+        }
+    }
+  }
+  
+  label.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .back-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    a {
+        text-decoration: none;
+        color: #FEFEFE;
+        padding: 1rem;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            color: #FF00FF;
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+        }
+    }
+  }
+  
+  .date-time-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #FEFEFE;
+    div {
+        background: #333;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+        }
+    }
+  }
+
+  /* Top Part Styling */
+.top-part {
+    z-index: 10; /* Ensure the top-part is above the navigation bar */
+    background: linear-gradient(45deg, #2d3748, #252e3c);
+}
+
+/* Bottom Part Styling */
+.bottom-part {
+    margin-top: 75px; /* Add margin to account for navbar height */
+    height: calc(100vh - 235px); /* Adjust height based on navbar and top-part */
+    z-index: 5; /* Ensure bottom-part is below the top-part */
+}
+/* Left Part Styling */
+.left-part {
+    z-index: 6; /* Ensure left-part is above bottom-part */
+}
+
+/* Right Part Styling */
+.right-part {
+    z-index: 6; /* Ensure right-part is above bottom-part */
+}
+
+/* Navigation Bar Styling */
+.drawer-list {
+    z-index: 100; /* Set a high z-index to ensure it's on top */
+}
+
+input.hamburger:checked ~ .drawer-list {
+    transform: translateX(0); /* Slide in the navigation bar on checked state */
+}
+
+/* Top Part Styling */
+.top-part {
+    z-index: 9;  /* Ensure it's below the navigation bar */
+}
+
+#bottom-part::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+#bottom-part {
+    padding: 20px;
+    height: calc(100vh - 80px); /* Adjust height based on the top part */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 2px solid #bdc3c7; /* Add border to #bottom-part */
+    position: relative; /* For pseudo-element positioning */
+}
+
+#bottom-part::after {
+    content: '';
+    display: block;
+    height: 30%; /* Extra space at the bottom */
+}
+
+#bottom-part::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+#bottom-part::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+    border: 3px solid #ecf0f1; /* Padding around the scrollbar thumb */
+}
+
+#bottom-part::-webkit-scrollbar-track {
+    background: #ecf0f1; /* Background of the scrollbar track */
+    border-radius: 10px; /* Roundness of the scrollbar track */
+}
+
+/* Customize the filter dropdown list */
+#filter-dropdown {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #1c1c1c;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#filter-dropdown:focus {
+    outline: none;
+}
+
+#filter-dropdown:hover {
+    box-shadow: 0 4px 20px rgba(0, 150, 255, 0.7);
+}
+
+#filter-dropdown option {
+    background: #1c1c1c;
+    color: #ffffff;
+}
+
+/* 3D effect */
+#filter-dropdown {
+    perspective: 1000px;
+}
+
+#filter-dropdown:active {
+    transform: scale(0.95);
+}
+
+#filter-dropdown:hover {
+    animation: glowing 1.5s infinite;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px #00aeff;
+    }
+    50% {
+        box-shadow: 0 0 20px #00aeff;
+    }
+    100% {
+        box-shadow: 0 0 5px #00aeff;
+    }
+}

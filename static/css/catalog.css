@@ -1,0 +1,456 @@
+/* General Styling & Dark Theme */
+body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    background-color: #121212; /* Darker background for better contrast */
+    color: #e0e0e0; /* Light gray for text */
+}
+
+/* Top Part */
+.top-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e; /* Even darker shade for top part */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #ffa500; /* Saffron bottom border */
+}
+
+/* Logo */
+.logo-container {
+    width: 100px; /* Increased logo size */
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px;
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.8); /* Golden glow */
+    border: 3px solid #ffd700; /* Golden border */
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Make sure logo is fully visible */
+}
+
+/* Titles */
+.catalog-title, .welcome-title {
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 0 0 10px #64b5f6; /* Brighter glow for better visibility */
+    margin: 0;
+}
+
+/* Bottom Part */
+.bottom-part {
+    display: flex;
+    min-height: calc(100vh - 100px);
+    border-top: 3px solid #ffa500; /* Saffron top border */
+}
+
+/* Left Part (Product List) */
+.left-part {
+    width: 25%;
+    padding: 20px;
+    background-color: #212121; /* Darker gray */
+    border-right: 3px solid #ffa500; /* Saffron right border */
+    box-shadow: 16px 16px 0px 0px #f07807;
+    box-shadow: 0px 0px 8px 8px #64b5f6;
+    border: 3px solid #ef9a06; 
+}
+
+.all-products, .product-tree li {
+    cursor: pointer;
+    padding: 15px 20px; /* Increased padding */
+    border-radius: 8px;
+    border: 2px solid transparent;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Increased font size */
+    background-color: #2a2a2a; /* Slightly different shade */
+    color: #e0e0e0; /* Light gray for text */
+}
+
+.all-products:hover, .product-tree li:hover { 
+    border-color: #64b5f6;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.8); /* Enhanced blue glow */
+    transform: translateY(-2px);
+}
+
+.all-products:active, .product-tree li:active {
+    transform: scale(0.95);
+}
+
+/* Right Part (Image Display) */
+.right-part {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items at the start */
+    gap: 15px;
+    background-color: #303030; /* Dark gray */
+    box-shadow: 16px 16px 0px 0px #f07807;
+    box-shadow: 0px 0px 8px 8px #64b5f6;
+    border: 3px solid #ef9a06; 
+}
+
+.image-box {
+    width: 180px;
+    height: 180px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.image-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    border-color: #64b5f6;
+    box-shadow: 16px 16px 0px 0px #f07807;
+    box-shadow: 0px 0px 8px 8px #64b5f6;
+    border: 3px solid #ef9a06; 
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-tree {
+    display: none; /* Initially hide the dropdown */
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Modal Close Button */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Navigation Buttons */
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.modal-prev {
+    left: 0;
+}
+
+.modal-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Modal Navigation Button Hover Effects */
+.modal-prev:hover,
+.modal-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to create space below the title */
+}
+.right-part {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center title horizontally */
+    gap: 15px;
+    background-color: #20202feb; /* Dark gray */
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drawer-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-100vw, 0);
+    transition: transform 0.45s ease;
+    background-color: rgba(25, 17, 61, 0.9);
+    border-right: 2px solid;
+    border-image: linear-gradient(45deg, crimson, green) 1;
+    padding-top: 75px;
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+    ul {
+        height: 100%;
+        overflow: auto;
+    }
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: #FEFEFE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #673d0b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                color: #FF00FF;
+                box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+            }
+        }
+    }
+}
+
+input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .drawer-list {
+            transform: translateX(0);
+        }
+        & ~ label {
+            > i {
+                background-color: transparent;
+                transform: rotate(90deg);
+                &:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+            close {
+                color: #FEFEFE;
+                width: 100%;
+            }
+            open {
+                color: rgba(0, 0, 0, 0);
+                width: 0;
+            }
+        }
+    }
+}
+
+label.hamburger {
+    z-index: 9999;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+    text {
+        close,
+        open {
+            text-transform: uppercase;
+            font-size: .8em;
+            position: absolute;
+            transform: translateY(50px);
+            text-align: center;
+            overflow: hidden;
+            transition: width .25s .35s, color .45s .35s;
+        }
+        close {
+            color: rgba(0, 0, 0, 0);
+            right: 0;
+            width: 0;
+        }
+        open {
+            color: #FEFEFE;
+            width: 100%;
+        }
+    }
+    > i {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        background-color: #FEFEFE;
+        pointer-events: auto;
+        transition-duration: .35s;
+        transition-delay: .35s;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            background-color: #FEFEFE;
+            content: "";
+            transition: transform 0.35s;
+            transform-origin: 50% 50%;
+        }
+        &:before {
+            transform: translate(-50%, -14px);
+        }
+        &:after {
+            transform: translate(-50%, 14px);
+        }
+    }
+}
+
+label.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    a {
+        text-decoration: none;
+        color: #FEFEFE;
+        padding: 1rem;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            color: #FF00FF;
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+        }
+    }
+}
+
+.date-time-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #FEFEFE;
+    div {
+        background: #333;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+        }
+    }
+}
+
+  /* CSS file */
+.image-box {
+    width: 100%;
+    height: 300px;
+    object-fit: auto;
+}
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%px;
+    width: auto;
+    margin: 0.5%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

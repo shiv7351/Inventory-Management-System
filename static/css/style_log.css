@@ -1,0 +1,249 @@
+body {
+    font-family: cursive;
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    margin: 0; /* Remove default body margins */
+}
+
+header, footer {
+    background: #222; /* Darker header/footer */
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 10px #f39c12; /* Glowing text effect */
+    box-shadow: 0 0 15px 5px #00FF00; /* Emerald green glow for banner */
+}
+
+h1, footer p {
+    font-size: 3em;
+    margin: 0; /* Reset heading margins */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    border: 2px solid #f39c12;
+    box-shadow: 0 0 10px #f39c12;
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.left-section {
+    flex: 1;
+    background: #222; /* Darker background for the image section */
+    padding: 0; /* Remove padding to fill the entire space */
+    overflow: hidden; /* Hide any part of the image that overflows */
+    box-shadow: 0 0 10px 3px #dfd10ed2; /* Crimson red glow for left section */
+}
+
+.left-section img {
+    width: 100%;
+    height: 100%; /* Make the image take up the full height of the container */
+    object-fit: cover; /* Cover the entire container while maintaining aspect ratio, may crop */
+}
+
+.right-section {
+    flex: 2;
+    padding: 40px;
+    text-align: center;
+}
+
+.right-section h2 { 
+    font-size: 2em;
+    font-family: cursive;
+    color: #ecf0f1; /* Text color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #f39c12; /* Glowing effect */
+}
+
+.login-form {
+    background-color: rgba(44, 62, 80, 0.8); /* Slightly more opaque background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f39c12;
+}
+
+.logo img {
+    width: 120px; /* Larger logo */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #DC143C; /* Crimson red border for logo */
+    box-shadow: 0 0 10px 3px #DC143C; /* Crimson red glow for logo */
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #f39c12;
+    background-color: transparent;
+    color: #ecf0f1;
+}
+
+button {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 12px 24px; /* Larger button */
+    font-size: 1.2em;
+    border: 2px solid #00008B; /* Dark blue border */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    box-shadow: 0 0 10px 3px #00008B; /* Dark blue glow */
+}
+
+button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #f39c12;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block; /* Display links as blocks */
+}
+
+#message {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f39c12;
+    font-size: 1.2em;
+}
+
+#message {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+/* Message Box */
+.message-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Form Inputs and Button */
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Links */
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+#message p {
+    margin: 0;
+}
+
+#message #countdown {
+    font-size: 20px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Disable form inputs when message is shown */
+form input[disabled], form button[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Style for the countdown timer */
+#countdown {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    font-size: 20px;
+}
+
+/* Prevent pointer events on message box */
+#message-box {
+    pointer-events: none;
+}
+
+/* Ensure that the main container is not interactive during message display */
+.main-container {
+    pointer-events: none;
+}
+
+/* Container for the countdown message */
+.countdown-container {
+    text-align: center;
+}
+
+/* Style for the countdown circle */
+.countdown-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: conic-gradient(#050570 0deg, #0779b2 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #e17c0f;
+    animation: none; /* Stop any previous animation */
+}

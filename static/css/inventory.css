@@ -1,0 +1,557 @@
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #1a202c; /* Dark blue background */
+    color: #f7fafc;             /* Light text color */
+    margin: 0;
+}
+
+/* Top Part Styles */
+#top-part {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #4299e1; /* Glowing blue border */
+    box-shadow: 0 4px 6px rgba(66, 153, 225, 0.5); /* Soft glow */
+}
+
+#logo-circle {
+    width: 100px; /* Increased logo size */
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #e69914; /* Glowing blue border */
+    box-shadow: 0 0 10px rgba(66, 153, 225, 0.8); /* Stronger glow */
+    overflow: hidden;
+}
+
+#logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#title h1 {
+    font-size: 48px;
+    text-shadow: 0 0 10px rgba(66, 153, 225, 1); /* Glow text effect */
+}
+
+/* Bottom Part Styles */
+#bottom-part {
+    display: flex;
+    height: calc(100vh - 100px); /* Adjust height as needed */
+}
+
+/* Left Part Styles */
+#left-part {
+    width: 20%;
+    padding: 20px;
+    background-color: #2d3748; /* Slightly darker blue */
+    border-right: 2px solid #4299e1;
+    box-shadow: -4px 0 6px rgba(66, 153, 225, 0.5);
+}
+
+.flexbox-category {
+    padding: 20px;   /* Increased padding */
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid #4299e1;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(66, 153, 225, 0.6);
+    cursor: pointer;
+    font-size: 24px; /* Larger font */
+    color: #a0aec0; /* Lighter text for categories */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flexbox-category:hover {
+    transform: translateY(-5px); /* 3D hover effect */
+    box-shadow: 0 0 12px rgba(66, 153, 225, 0.8);
+}
+
+/* Right Part Styles */
+#right-part {
+    flex: 1;
+    padding: 20px;
+    background-color: #1a202c; 
+    overflow-y: auto;
+}
+
+#initial-message h1,
+#table-container h1 { /* Table titles (in JS) */
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(66, 153, 225, 1);
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Table Styles (to be added in JS) */
+#table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#table-container th, #table-container td {
+    border: 1px solid #4299e1;
+    padding: 10px;
+    text-align: center;
+}
+
+#table-container th {
+    background-color: #2d3748; /* Darker header */
+}
+
+/* Table Styles (to be added in JS) */
+#table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(66, 153, 225, 0.3); /* Soft glow on table */
+}
+
+#table-container th, #table-container td {
+    border: 1px solid #4299e1;
+    padding: 12px; /* Increased padding */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#table-container th {
+    background-color: #2d3748; /* Darker header */
+    font-weight: bold;
+}
+
+#table-container tr:hover td {
+    background-color: #242b38; /* Slightly lighter on hover */
+}
+
+
+/* Additional Styling */
+#top-part, #bottom-part, #left-part, #right-part {
+    box-shadow: inset 0 0 10px rgba(66, 153, 225, 0.6); /* Light coming from borders */
+}
+
+.flexbox-category {
+    font-size: 28px; /* Even larger font for categories */
+}
+
+/* Zebra Striping for Tables  */
+#table-container tbody tr:nth-child(even) {
+    background-color: #1f2937; /* Alternate row color */
+}
+
+/* Glowing Effects */
+#logo-circle {
+    animation: glow-blue 2s infinite alternate; /* Continuous blue glow for logo */
+}
+
+.flexbox-category {
+    animation: glow-purple 1.5s infinite alternate; /* Purple glow for flexboxes */
+}
+
+.flexbox-category:hover,
+.flexbox-category:focus {
+    animation: glow-pink 1s infinite alternate; /* Pink glow on hover/focus */
+}
+
+#title h1 {
+    animation: glow-yellow 2.5s infinite alternate; /* Yellow glow for title */
+}
+
+@keyframes glow-blue {
+    from { box-shadow: 0 0 10px rgba(225, 19, 19, 0.8); } /* Blue */
+    to { box-shadow: 0 0 20px rgba(66, 153, 225, 1); }
+}
+
+@keyframes glow-purple {
+    from { box-shadow: 0 0 8px rgba(234, 152, 10, 0.6); } /* Purple */
+    to { box-shadow: 0 0 12px rgba(139, 92, 246, 0.8); }
+}
+
+@keyframes glow-pink {
+    from { box-shadow: 0 0 12px rgba(244, 63, 94, 0.8); } /* Pink */
+    to { box-shadow: 0 0 16px rgba(244, 63, 94, 1); }
+}
+
+@keyframes glow-yellow {
+    from { text-shadow: 0 0 10px rgb(24, 96, 21); } /* Yellow */
+    to { text-shadow: 0 0 20px rgba(245, 158, 11, 1); }
+}
+
+/* Centering Top Content */
+#top-part {
+    justify-content: center; /* Horizontally center */
+}
+
+/* Right Part Styles - Diagonal and Centered */
+#right-part {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Vertically center */
+    align-items: center;   /* Horizontally center */
+}
+
+#initial-message h1 {
+    font-size: 54px;      /* Bigger font for right part */
+    transform: rotate(-10deg); /* Slight diagonal tilt */
+}
+
+/* Additional Animation */
+.flexbox-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+}
+
+.flexbox-category:hover {
+    transform: translateY(-5px) scale(1.05); /* Subtle zoom on hover */
+}
+
+.flexbox-category:active {
+    background-color: #38445c; /* Darker background on click */
+    transform: translateY(-2px); /* Slightly less lift on click */
+}
+
+#table-container td {
+    transition: transform 0.2s ease; /* Subtle cell scaling on hover */
+}
+
+#table-container tr:hover td {
+    background-color: #242b38;
+    transform: scale(1.02); /* Slight zoom on row hover */
+}
+
+/* Additional Animation */
+.flexbox-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+}
+
+.flexbox-category:hover {
+    transform: translateY(-5px) scale(1.05); /* Subtle zoom on hover */
+    box-shadow: 0 0 15px rgba(139, 92, 246, 1); /* Brighter purple glow on hover */
+}
+
+.flexbox-category:active {
+    background-color: #38445c; /* Darker background on click */
+    transform: translateY(-2px); /* Slightly less lift on click */
+}
+
+#table-container td {
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Added box-shadow transition */
+}
+
+#table-container tr:hover td {
+    background-color: #242b38;
+    transform: scale(1.02); /* Slight zoom on row hover */
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.5); /* Subtle glow on hover */
+}
+
+/* Border Glow Animation */
+#top-part, #bottom-part, #left-part, #right-part {
+    box-shadow: inset 0 0 10px rgba(66, 153, 225, 0.6); /* Initial glow */
+    animation: border-glow 3s infinite alternate;
+}
+
+@keyframes border-glow {
+    from { box-shadow: inset 0 0 10px rgba(66, 153, 225, 0.6); }
+    to { box-shadow: inset 0 0 20px rgba(66, 153, 225, 1); }
+}
+
+/* Logo Pulse Animation */
+@keyframes logo-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#logo-circle {
+    animation: glow-blue 2s infinite alternate, logo-pulse 2s infinite; /* Combined glow and pulse */
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .drawer-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-100vw, 0);
+    transition: transform 0.45s ease;
+    background-color: rgba(25, 17, 61, 0.9);
+    border-right: 2px solid;
+    border-image: linear-gradient(45deg, crimson, green) 1;
+    padding-top: 75px;
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+    ul {
+        height: 100%;
+        overflow: auto;
+    }
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: #FEFEFE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: #197599;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                color: #FF00FF;
+                box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+            }
+        }
+    }
+  }
+  
+  input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .drawer-list {
+            transform: translateX(0);
+        }
+        & ~ label {
+            > i {
+                background-color: transparent;
+                transform: rotate(90deg);
+                &:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+            close {
+                color: #FEFEFE;
+                width: 100%;
+            }
+            open {
+                color: rgba(0, 0, 0, 0);
+                width: 0;
+            }
+        }
+    }
+  }
+  
+  label.hamburger {
+    z-index: 9999;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+    text {
+        close,
+        open {
+            text-transform: uppercase;
+            font-size: .8em;
+            position: absolute;
+            transform: translateY(50px);
+            text-align: center;
+            overflow: hidden;
+            transition: width .25s .35s, color .45s .35s;
+        }
+        close {
+            color: rgba(0, 0, 0, 0);
+            right: 0;
+            width: 0;
+        }
+        open {
+            color: #FEFEFE;
+            width: 100%;
+        }
+    }
+    > i {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        background-color: #FEFEFE;
+        pointer-events: auto;
+        transition-duration: .35s;
+        transition-delay: .35s;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            background-color: #FEFEFE;
+            content: "";
+            transition: transform 0.35s;
+            transform-origin: 50% 50%;
+        }
+        &:before {
+            transform: translate(-50%, -14px);
+        }
+        &:after {
+            transform: translate(-50%, 14px);
+        }
+    }
+  }
+  
+  label.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .back-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    a {
+        text-decoration: none;
+        color: #FEFEFE;
+        padding: 1rem;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            color: #FF00FF;
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+            transform: translateY(-2px);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 20px #00FF00, 0 0 10px #00FF00;
+        }
+    }
+  }
+  
+  .date-time-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #FEFEFE;
+    div {
+        background: #333;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 20px #FF00FF, 0 0 10px #FF00FF;
+        }
+    }
+  }
+
+  #table-container {
+    position: relative;
+    overflow: auto;
+    overflow-y: auto; /* Hide vertical scrollbar */
+    max-height: 100vh;
+    padding: 20px;
+    margin-left: 10px; /* Adjust as needed */
+    padding-right: 15px; /* Add some padding to prevent scrollbar overlap */
+    padding-bottom: 15px; /* Add some padding to prevent scrollbar overlap */
+}
+
+#table-container h2 {
+    text-align: center;
+    font-size: 2em; /* Increase font size for table name */
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive; /* Example font family */
+    /* margin-left: 20%; Adjust as needed */
+}
+
+#table {
+    /* width: auto; */
+    width: calc(100% - 20px); /* Adjust width to account for margin */
+    border-collapse: collapse;
+    font-size: 1.2em; /* Increase font size for table content */
+}
+
+#table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for table cells */
+    text-align: center; /* Center align text in table cells */
+}
+
+#table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#table-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#table-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#edit-button, #update-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#edit-button:hover {
+    background-color: #45a049;
+}
+
+#update-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+#update-button:hover {
+    background-color: #007bb5;
+}
+
+.editable-cell {
+    background-color: #242b38;
+    border: 1px solid #008CBA;;
+}

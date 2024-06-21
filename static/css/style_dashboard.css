@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #222831; /* Dark gray base */
+}
+
+header {
+    background-color: #393e46; /* Slightly lighter gray for header */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+main {
+    display: flex; /* Use flexbox for layout */
+}
+
+#left-side {
+    width: 25%; /* Smaller width for left side */
+    padding: 20px;
+    text-align: center;
+    background-color: #2d333c; /* Darker gray for left section */
+    filter: drop-shadow(0 0 10px #00adb5); /* Glow effect for left section */
+}
+
+#logo-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #eeeeee; /* Light gray for contrast */
+    background-image: url("../images/logo.png"); /* No need for full path */
+    background-size: contain; /* Make sure logo fits in the circle */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px #00adb5); /* Add a glowing effect */
+}
+
+#welcome-message {
+    margin-top: 20px;
+    font-size: 36px; /* Increased font size */
+    line-height: 1.4;
+    color: #e6e6f2; /* Light color for contrast against dark background */
+    text-shadow: 0 0 5px #00adb5; /* Subtle glow effect */
+    font-family: 'Dancing Script', cursive; /* Same font as the heading */
+}
+
+#datetime-box {
+    margin-top: 20px;
+    background-color: #495057; /* A darker gray for the date/time box */
+    color: #eeeeee; /* Light gray for the text */
+    padding: 10px;
+    border: 1px solid #6c757d; /* Slightly darker border */
+    filter: drop-shadow(0 0 10px #00adb5); /* Add a glowing effect */
+}
+
+#right-side {
+    width: 75%;
+    padding: 20px;
+    background-color: #30363d; /* Slightly lighter gray for right section */
+    color: #eeeeee;
+    text-align: center; /* Center the content */
+}
+
+#dashboard-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around; /* Even spacing between items */
+}
+#dashboard-heading { 
+    font-family: 'Dancing Script', cursive; /* Cursive font from Google Fonts */
+    font-size: 36px;
+}
+
+.item {
+    background-color: #00adb5; /* Teal accent color */
+    color: #eeeeee; /* Light text for readability */
+    padding: 15px;
+    margin: 10px;
+    width: 200px; /* Adjust width as needed */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    flex: 1 0 250px; /* Grow to fill available space, minimum width of 250px */
+    box-sizing: border-box; /* Include padding and border in the width */
+    filter: drop-shadow(0 0 10px #ffd700); /* Golden glow for flexboxes */
+}
+
+.item:hover {
+    background-color: #00848e; /* Darker teal on hover */
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Banner styles */
+#banner {
+    background-image: url("../images/ban pic.png"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust the height as needed */
+    filter: drop-shadow(0 0 10px #00adb5); /* Add a glowing effect */
+    display: flex; /* Use flexbox to center the text */
+    align-items: center;
+    justify-content: center;
+}
+
+#banner-text {
+    font-family: 'Dancing Script', cursive; /* Cursive font from Google Fonts */
+    font-size: 58px;
+    color: #e6e6f2; /* Light color for contrast against dark background */
+    text-shadow: 0 0 5px #00adb5; /* Subtle glow effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    #left-side, #right-side {
+        width: 100%;
+    }
+
+    #dashboard-items {
+        justify-content: center; /* Center items on small screens */
+    }
+}
+
+footer {
+    background-color: #393e46;
+    padding: 10px; /* Reduced padding to make the footer smaller */
+    text-align: center;
+    filter: drop-shadow(0 0 10px #00adb5); /* Glow effect for footer */
+}
+
+#footer-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px; /* Slightly reduced font size */
+    color: #e6e6f2;
+    text-shadow: 0 0 5px #00adb5; /* Subtle glow effect */
+}
+
+.item {
+    background-color: #00adb5;
+    color: #eeeeee; 
+    padding: 20px;   /* Increased padding for larger size */
+    margin: 15px;    /* Increased margin for spacing */
+    width: 220px;   /* Adjusted width */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    flex: 1 0 250px; /* Maintains flexibility while setting a minimum width */
+    box-sizing: border-box; 
+    filter: drop-shadow(0 0 10px #ffd700); 
+}
